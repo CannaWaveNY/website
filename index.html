@@ -8,6 +8,19 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/cannawave-logo.png">
+    
+    <!-- Dutchie E-commerce Integration -->
+    <script src="https://embed.dutchie.com/menu.js" defer></script>
+    <script>
+        // Dutchie configuration
+        window.dutchieConfig = {
+            dispensaryId: 'YOUR_DUTCHIE_URL_HERE', // Replace with your actual Dutchie dispensary ID
+            theme: 'light',
+            showHeader: true,
+            showFooter: true
+        };
+    </script>
 </head>
 <body>
     <!-- Age Gate Modal -->
@@ -32,14 +45,18 @@
             <nav class="navbar">
                 <div class="nav-container">
                     <div class="nav-logo">
-                        <h1>CannaWave</h1>
-                        <p class="tagline">Premium Cannabis in Albion, New York</p>
+                        <div class="logo-container">
+                            <img src="images/cannawave-logo.png" alt="CannaWave Logo" class="logo-image">
+                            <div class="logo-text">
+                                <h1>CannaWave</h1>
+                                <p class="tagline">Premium Cannabis in Albion, New York</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="nav-menu" id="navMenu">
                         <a href="#home" class="nav-link">Home</a>
                         <a href="shop.html" class="nav-link">Shop</a>
                         <a href="products.html" class="nav-link">Products</a>
-                        <a href="products-shop.html" class="nav-link">Browse</a>
                         <a href="#about" class="nav-link">About</a>
                         <a href="faqs.html" class="nav-link">FAQs</a>
                         <a href="contact.html" class="nav-link">Contact</a>
@@ -57,12 +74,58 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <div class="hero-text">
+                    <img src="images/cannawave-logo.png" alt="CannaWave Logo" class="hero-logo">
                     <h1 class="hero-title">CannaWave – Cannabis in Albion, New York – Now Open</h1>
                     <p class="hero-subtitle">Your premier destination for cannabis products, quality & service.</p>
                     <button class="btn btn-primary btn-large">Shop Now</button>
                 </div>
                 <div class="hero-image">
-                    <img src="images/c4a27a31-b1eb-444c-8226-4bd60f82de7d.png" alt="CannaWave Dispensary Exterior">
+                    <img src="images/exterior.png" alt="CannaWave Dispensary Exterior">
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Online Section -->
+        <section class="order-online">
+            <div class="container">
+                <div class="order-content">
+                    <div class="order-text">
+                        <img src="images/cannawave-logo.png" alt="CannaWave Logo" class="section-logo">
+                        <h2>Order Online</h2>
+                        <p>Browse our full menu and place your order for pickup or delivery. Fresh products, competitive prices, and fast service.</p>
+                        <div class="order-buttons">
+                            <button id="openDutchieMenu" class="btn btn-primary btn-large">
+                                <i class="fas fa-shopping-cart"></i> View Menu
+                            </button>
+                            <button id="openDutchieOrder" class="btn btn-outline btn-large">
+                                <i class="fas fa-bolt"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Dutchie Menu Embed Section -->
+        <section id="dutchie-menu" class="dutchie-embed-section" style="display: none;">
+            <div class="container">
+                <div class="dutchie-header">
+                    <h2>Our Menu</h2>
+                    <button id="closeDutchieMenu" class="btn btn-outline">
+                        <i class="fas fa-times"></i> Close Menu
+                    </button>
+                </div>
+                <div id="dutchie-menu-embed" class="dutchie-menu-container">
+                    <!-- Dutchie menu will be embedded here -->
+                    <div class="dutchie-placeholder">
+                        <div class="placeholder-content">
+                            <i class="fas fa-shopping-basket" style="font-size: 3rem; color: #4a7c59; margin-bottom: 20px;"></i>
+                            <h3>Loading Menu...</h3>
+                            <p>Please wait while we load our product menu from Dutchie.</p>
+                            <div class="loading-spinner"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -74,7 +137,7 @@
                 <div class="categories-grid">
                     <div class="category-card">
                         <div class="category-image">
-                            <img src="images/ChatGPT Image Oct 28, 2025, 04_49_02 PM.png" alt="Premium Cannabis Flower">
+                            <img src="images/bud.png" alt="Premium Cannabis Flower">
                         </div>
                         <div class="category-content">
                             <h3>Flower</h3>
@@ -84,7 +147,7 @@
                     </div>
                     <div class="category-card">
                         <div class="category-image">
-                            <img src="images/canabis-marijuana-bumps-8054145_1280.jpg" alt="Pre-rolls">
+                            <img src="images/preroll.jpg" alt="Pre-rolls">
                         </div>
                         <div class="category-content">
                             <h3>Pre-rolls</h3>
@@ -94,7 +157,7 @@
                     </div>
                     <div class="category-card">
                         <div class="category-image">
-                            <img src="images/istockphoto-2217214102-2048x2048.jpg" alt="Extracts">
+                            <img src="images/extract.avif" alt="Extracts">
                         </div>
                         <div class="category-content">
                             <h3>Extracts</h3>
@@ -104,7 +167,7 @@
                     </div>
                     <div class="category-card">
                         <div class="category-image">
-                            <img src="images/istockphoto-1189236740-2048x2048.jpg" alt="Vapes">
+                            <img src="images/cart.avif" alt="Vapes">
                         </div>
                         <div class="category-content">
                             <h3>Vapes</h3>
@@ -114,7 +177,7 @@
                     </div>
                     <div class="category-card">
                         <div class="category-image">
-                            <img src="images/delta-8-thc-6105636_1280.jpg" alt="Edibles">
+                            <img src="images/edible.avif" alt="Edibles">
                         </div>
                         <div class="category-content">
                             <h3>Edibles</h3>
@@ -124,7 +187,7 @@
                     </div>
                     <div class="category-card">
                         <div class="category-image">
-                            <img src="images/istockphoto-1187713625-2048x2048.jpg" alt="Drinks">
+                            <img src="images/drink.avif" alt="Drinks">
                         </div>
                         <div class="category-content">
                             <h3>Drinks</h3>
@@ -147,7 +210,7 @@
                         <p>Our mission is to offer a safe, welcoming environment where adults can explore and purchase premium cannabis products while receiving expert guidance from our knowledgeable staff. We believe in the power of cannabis to enhance wellness and are proud to be part of New York's thriving cannabis industry.</p>
                     </div>
                     <div class="about-image">
-                        <img src="images/istockphoto-1034597476-2048x2048.jpg" alt="CannaWave Dispensary Interior">
+                        <img src="images/interior.png" alt="CannaWave Dispensary Interior">
                     </div>
                 </div>
             </div>
@@ -205,8 +268,13 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-section">
-                        <h3>CannaWave</h3>
-                        <p>Premium Cannabis in Albion, New York</p>
+                        <div class="footer-logo">
+                            <img src="images/cannawave-logo.png" alt="CannaWave Logo" class="footer-logo-image">
+                            <div class="footer-logo-text">
+                                <h3>CannaWave</h3>
+                                <p>Premium Cannabis in Albion, New York</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="footer-section">
                         <h4>Quick Links</h4>

@@ -9,7 +9,7 @@ This guide explains how to integrate various e-commerce platforms into the Green
 ```
 ├── shop.html                 # Main e-commerce page
 ├── shop-embed.js            # Reusable e-commerce component
-├── products-shop.html       # Product browsing page (renamed from shop.html)
+├── (removed) products-shop.html       
 ├── ECOMMERCE_INTEGRATION_GUIDE.md  # This documentation
 └── styles.css               # Contains e-commerce specific styles
 ```

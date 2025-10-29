@@ -128,6 +128,65 @@ body {
     z-index: 1000;
 }
 
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-image {
+    height: 64px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+.logo-text h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c5530;
+}
+
+.logo-text .tagline {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 400;
+}
+
+/* Footer Logo Styles */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo-image {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.9;
+}
+
+.footer-logo-text h3 {
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.footer-logo-text p {
+    margin: 0;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
 .navbar {
     padding: 1rem 0;
 }
@@ -1155,6 +1214,40 @@ body {
         left: 0;
     }
 
+    /* Mobile Logo Styles */
+    .logo-container {
+        gap: 10px;
+    }
+
+    .logo-image {
+        height: 48px;
+    }
+
+    .logo-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo-text .tagline {
+        font-size: 0.8rem;
+    }
+
+    /* Mobile Footer Logo Styles */
+    .footer-logo {
+        gap: 10px;
+    }
+
+    .footer-logo-image {
+        height: 42px;
+    }
+
+    .footer-logo-text h3 {
+        font-size: 1.3rem;
+    }
+
+    .footer-logo-text p {
+        font-size: 0.8rem;
+    }
+
     .nav-toggle {
         display: flex;
     }
@@ -1317,6 +1410,23 @@ body {
     .form-container p {
         font-size: 1rem;
     }
+
+    /* Very Small Mobile Logo Styles */
+    .logo-container {
+        gap: 8px;
+    }
+
+    .logo-image {
+        height: 40px;
+    }
+
+    .logo-text h1 {
+        font-size: 1.3rem;
+    }
+
+    .logo-text .tagline {
+        font-size: 0.75rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1334,5 +1444,348 @@ body {
 
     .contact-item {
         padding: 1rem;
+    }
+}
+
+/* Dutchie E-commerce Integration Styles */
+.order-online {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 80px 0;
+}
+
+/* Inline section logos */
+.hero-logo, .section-logo {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+    .hero-logo, .section-logo {
+        height: 84px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo, .section-logo {
+        height: 68px;
+        margin-bottom: 8px;
+    }
+}
+
+.order-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.order-text h2 {
+    color: #2c5530;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.order-text p {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.order-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.order-buttons .btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.feature {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.feature i {
+    font-size: 2.5rem;
+    color: #4a7c59;
+    margin-bottom: 15px;
+}
+
+.feature h4 {
+    color: #2c5530;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.feature p {
+    color: #666;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Dutchie Menu Embed Section */
+.dutchie-embed-section {
+    background: white;
+    padding: 60px 0;
+    border-top: 1px solid #e9ecef;
+}
+
+.dutchie-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #4a7c59;
+}
+
+.dutchie-header h2 {
+    color: #2c5530;
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.dutchie-menu-container {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 600px;
+    position: relative;
+}
+
+.dutchie-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    text-align: center;
+}
+
+.placeholder-content h3 {
+    color: #2c5530;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.placeholder-content p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4a7c59;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mobile Responsiveness for Dutchie Integration */
+@media (max-width: 768px) {
+    .order-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .order-text h2 {
+        font-size: 2rem;
+    }
+    
+    .order-buttons {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .order-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .order-features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .feature {
+        padding: 20px 15px;
+    }
+    
+    .dutchie-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .dutchie-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .dutchie-menu-container {
+        padding: 15px;
+        min-height: 400px;
+    }
+    
+    .dutchie-placeholder {
+        min-height: 300px;
+    }
+    
+    .placeholder-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .placeholder-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-online {
+        padding: 60px 0;
+    }
+    
+    .order-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .order-text p {
+        font-size: 1rem;
+    }
+    
+    .order-buttons .btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    .feature {
+        padding: 15px 10px;
+    }
+    
+    .feature i {
+        font-size: 2rem;
+    }
+    
+    .feature h4 {
+        font-size: 1.1rem;
+    }
+    
+    .dutchie-menu-container {
+        padding: 10px;
+    }
+}
+
+/* Dutchie Shop Page Styles */
+.dutchie-shop-container {
+    width: 100%;
+    min-height: 600px;
+    position: relative;
+}
+
+.dutchie-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+}
+
+.dutchie-loading p {
+    color: #666;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.ecommerce-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.placeholder-icon {
+    font-size: 4rem;
+    color: #4a7c59;
+    margin-bottom: 20px;
+}
+
+.ecommerce-placeholder h3 {
+    color: #2c5530;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.ecommerce-placeholder p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    max-width: 500px;
+}
+
+/* Mobile styles for Dutchie shop */
+@media (max-width: 768px) {
+    .dutchie-shop-container {
+        min-height: 400px;
+    }
+    
+    .dutchie-loading {
+        min-height: 300px;
+    }
+    
+    .ecommerce-placeholder {
+        min-height: 300px;
+        padding: 20px 15px;
+    }
+    
+    .placeholder-icon {
+        font-size: 3rem;
+    }
+    
+    .ecommerce-placeholder h3 {
+        font-size: 1.5rem;
+    }
+    
+    .ecommerce-placeholder p {
+        font-size: 1rem;
     }
 }

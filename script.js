@@ -235,4 +235,138 @@ function showComingSoon(feature) {
     }, 3000);
 }
 
+// Dutchie E-commerce Integration
+document.addEventListener('DOMContentLoaded', function() {
+    const openDutchieMenuBtn = document.getElementById('openDutchieMenu');
+    const openDutchieOrderBtn = document.getElementById('openDutchieOrder');
+    const closeDutchieMenuBtn = document.getElementById('closeDutchieMenu');
+    const dutchieMenuSection = document.getElementById('dutchie-menu');
+    const dutchieMenuEmbed = document.getElementById('dutchie-menu-embed');
+    
+    let dutchieInitialized = false;
+
+    // Open Dutchie menu
+    if (openDutchieMenuBtn) {
+        openDutchieMenuBtn.addEventListener('click', function() {
+            showDutchieMenu();
+        });
+    }
+
+    // Open Dutchie order (direct to checkout)
+    if (openDutchieOrderBtn) {
+        openDutchieOrderBtn.addEventListener('click', function() {
+            openDutchieOrder();
+        });
+    }
+
+    // Close Dutchie menu
+    if (closeDutchieMenuBtn) {
+        closeDutchieMenuBtn.addEventListener('click', function() {
+            hideDutchieMenu();
+        });
+    }
+
+    function showDutchieMenu() {
+        if (dutchieMenuSection) {
+            dutchieMenuSection.style.display = 'block';
+            dutchieMenuSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Initialize Dutchie if not already done
+            if (!dutchieInitialized) {
+                initializeDutchie();
+            }
+        }
+    }
+
+    function hideDutchieMenu() {
+        if (dutchieMenuSection) {
+            dutchieMenuSection.style.display = 'none';
+        }
+    }
+
+    function openDutchieOrder() {
+        // This will redirect to Dutchie's order page
+        const dutchieUrl = window.dutchieConfig?.dispensaryId || 'YOUR_DUTCHIE_URL_HERE';
+        if (dutchieUrl !== 'YOUR_DUTCHIE_URL_HERE') {
+            window.open(`https://dutchie.com/dispensary/${dutchieUrl}`, '_blank');
+        } else {
+            alert('Dutchie integration not configured. Please contact us to place an order.');
+        }
+    }
+
+    function initializeDutchie() {
+        const dutchieUrl = window.dutchieConfig?.dispensaryId || 'YOUR_DUTCHIE_URL_HERE';
+        
+        if (dutchieUrl === 'YOUR_DUTCHIE_URL_HERE') {
+            // Show placeholder if Dutchie not configured
+            showDutchiePlaceholder();
+            return;
+        }
+
+        try {
+            // Check if Dutchie script is loaded
+            if (typeof window.Dutchie !== 'undefined') {
+                // Initialize Dutchie embed
+                const dutchieEmbed = new window.Dutchie({
+                    dispensaryId: dutchieUrl,
+                    container: dutchieMenuEmbed,
+                    theme: 'light',
+                    showHeader: true,
+                    showFooter: true
+                });
+                
+                dutchieInitialized = true;
+            } else {
+                // Fallback: create iframe embed
+                createDutchieIframe(dutchieUrl);
+            }
+        } catch (error) {
+            console.error('Error initializing Dutchie:', error);
+            showDutchiePlaceholder();
+        }
+    }
+
+    function createDutchieIframe(dutchieUrl) {
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://dutchie.com/dispensary/${dutchieUrl}`;
+        iframe.style.width = '100%';
+        iframe.style.height = '600px';
+        iframe.style.border = 'none';
+        iframe.style.borderRadius = '8px';
+        iframe.title = 'CannaWave Menu';
+        iframe.loading = 'lazy';
+        
+        // Clear placeholder and add iframe
+        dutchieMenuEmbed.innerHTML = '';
+        dutchieMenuEmbed.appendChild(iframe);
+        
+        dutchieInitialized = true;
+    }
+
+    function showDutchiePlaceholder() {
+        const placeholder = document.createElement('div');
+        placeholder.className = 'dutchie-placeholder';
+        placeholder.innerHTML = `
+            <div class="placeholder-content">
+                <i class="fas fa-shopping-basket" style="font-size: 3rem; color: #4a7c59; margin-bottom: 20px;"></i>
+                <h3>Menu Coming Soon</h3>
+                <p>Our online ordering system is being set up. Please call us at (585) 555-0123 to place your order.</p>
+                <a href="tel:5855550123" class="btn btn-primary">Call to Order</a>
+            </div>
+        `;
+        
+        dutchieMenuEmbed.innerHTML = '';
+        dutchieMenuEmbed.appendChild(placeholder);
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (dutchieMenuSection && dutchieMenuSection.style.display === 'block') {
+            if (!dutchieMenuSection.contains(e.target) && !openDutchieMenuBtn.contains(e.target)) {
+                hideDutchieMenu();
+            }
+        }
+    });
+});
+
 
