@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Category Filter</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        .test-button { 
+            background: #4a7c59; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            margin: 5px; 
+            cursor: pointer; 
+        }
+        .test-button:hover { background: #2c5530; }
+        .url-display { 
+            background: #f0f0f0; 
+            padding: 10px; 
+            border-radius: 5px; 
+            font-family: monospace; 
+            margin: 10px 0; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Category Filter Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Category Buttons</h2>
+        <p>Click these buttons to test the category filtering functionality:</p>
+        
+        <button class="test-button" onclick="testCategory('flower')">Test Flower Category</button>
+        <button class="test-button" onclick="testCategory('edibles')">Test Edibles Category</button>
+        <button class="test-button" onclick="testCategory('vapes')">Test Vapes Category</button>
+        <button class="test-button" onclick="testCategory('extracts')">Test Extracts Category</button>
+        <button class="test-button" onclick="testCategory('prerolls')">Test Pre-rolls Category</button>
+        <button class="test-button" onclick="testCategory('drinks')">Test Drinks Category</button>
+        <button class="test-button" onclick="testCategory('all')">Test All Products</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Current URL</h2>
+        <div class="url-display" id="currentUrl"></div>
+        <button class="test-button" onclick="updateUrlDisplay()">Refresh URL Display</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Instructions</h2>
+        <ol>
+            <li>Click any category button above</li>
+            <li>You should be redirected to products.html with the category parameter</li>
+            <li>The products page should automatically filter to show only that category</li>
+            <li>Check the browser console for debug messages</li>
+        </ol>
+    </div>
+
+    <script>
+        function testCategory(category) {
+            console.log('Testing category:', category);
+            window.location.href = `products.html?category=${category}`;
+        }
+        
+        function updateUrlDisplay() {
+            document.getElementById('currentUrl').textContent = window.location.href;
+        }
+        
+        // Update URL display on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateUrlDisplay();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Online | CannaWave | Cannabis Dispensary in Albion, New York</title>
+    <meta name="description" content="Shop cannabis products online at CannaWave. Browse our premium selection of flowers, edibles, vapes, and more with convenient online ordering.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* E-commerce Shop Page Specific Styles */
+        .shop-hero {
+            background: linear-gradient(135deg, #4a7c59, #2c5530);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .shop-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .shop-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* E-commerce Container Styles */
+        .ecommerce-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+        }
+
+        /* E-commerce Embed Wrapper */
+        .ecommerce-embed-wrapper {
+            width: 100%;
+            min-height: 600px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background: #fafafa;
+        }
+
+        /* Placeholder Styles */
+        .ecommerce-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 600px;
+            padding: 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .ecommerce-placeholder h3 {
+            color: #2c5530;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .ecommerce-placeholder p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .ecommerce-placeholder .placeholder-icon {
+            font-size: 4rem;
+            color: #4a7c59;
+            margin-bottom: 20px;
+        }
+
+        .ecommerce-placeholder .integration-notes {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4a7c59;
+            text-align: left;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+        .ecommerce-placeholder .integration-notes h4 {
+            color: #2c5530;
+            margin-bottom: 10px;
+        }
+
+        .ecommerce-placeholder .integration-notes code {
+            background: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+
+        /* Loading States */
+        .ecommerce-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            color: #666;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4a7c59;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .shop-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .shop-hero p {
+                font-size: 1rem;
+            }
+
+            .ecommerce-container {
+                padding: 20px 10px;
+            }
+
+            .ecommerce-placeholder {
+                padding: 20px;
+                min-height: 400px;
+            }
+
+            .ecommerce-placeholder h3 {
+                font-size: 1.5rem;
+            }
+
+            .ecommerce-placeholder .placeholder-icon {
+                font-size: 3rem;
+            }
+        }
+
+        /* E-commerce Integration Styles */
+        .ecommerce-integration {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+        }
+
+        /* Error State */
+        .ecommerce-error {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            color: #dc3545;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .ecommerce-error .error-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html" style="text-decoration: none; color: inherit;">CannaWave</a></h1>
+                    <p class="tagline">Premium Cannabis in Albion, New York</p>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="shop.html" class="nav-link active">Shop</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="products-shop.html" class="nav-link">Browse</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="faqs.html" class="nav-link">FAQs</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-toggle" id="navToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Shop Hero Section -->
+    <section class="shop-hero">
+        <div class="container">
+            <h1>Shop Cannabis Online</h1>
+            <p>Browse our premium selection of cannabis products and place your order online for pickup or delivery</p>
+        </div>
+    </section>
+
+    <!-- E-commerce Integration Section -->
+    <section class="ecommerce-container">
+        <!-- 
+        ===========================================
+        E-COMMERCE INTEGRATION AREA
+        ===========================================
+        
+        This section is designed to host embedded e-commerce platforms.
+        Replace the placeholder content below with your chosen e-commerce solution.
+        
+        SUPPORTED PLATFORMS:
+        - Shopify (Shopify Buy Button)
+        - Dutchie (Cannabis-specific e-commerce)
+        - Square Online
+        - WooCommerce
+        - Custom e-commerce solutions
+        
+        INTEGRATION INSTRUCTIONS:
+        1. Remove the .ecommerce-placeholder div below
+        2. Add your e-commerce iframe or script in the .ecommerce-embed-wrapper
+        3. Update the iframe src or script source to your e-commerce platform
+        4. Test the integration on desktop and mobile devices
+        5. Ensure the iframe is responsive and loads properly
+        
+        EXAMPLE INTEGRATIONS:
+        
+        For Shopify:
+        <div class="ecommerce-embed-wrapper">
+            <iframe class="ecommerce-integration" 
+                    src="https://your-shop.myshopify.com/collections/all"
+                    width="100%" 
+                    height="800">
+            </iframe>
+        </div>
+        
+        For Dutchie:
+        <div class="ecommerce-embed-wrapper">
+            <script src="https://dutchie.com/embedded-menu/your-store-id"></script>
+        </div>
+        
+        For Square Online:
+        <div class="ecommerce-embed-wrapper">
+            <iframe class="ecommerce-integration"
+                    src="https://your-store.square.site"
+                    width="100%"
+                    height="800">
+            </iframe>
+        </div>
+        -->
+        
+        <div class="ecommerce-embed-wrapper">
+            <!-- PLACEHOLDER CONTENT - REPLACE WITH E-COMMERCE INTEGRATION -->
+            <div class="ecommerce-placeholder">
+                <div class="placeholder-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3>Online Shopping Coming Soon</h3>
+                <p>We're working on bringing you a seamless online shopping experience. In the meantime, please visit our dispensary or call us to place your order.</p>
+                
+                <div class="integration-notes">
+                    <h4>🔧 Developer Integration Notes:</h4>
+                    <p><strong>To integrate e-commerce:</strong></p>
+                    <ol>
+                        <li>Replace this placeholder with your e-commerce iframe/script</li>
+                        <li>Update the <code>src</code> attribute to your platform URL</li>
+                        <li>Ensure responsive design works on mobile devices</li>
+                        <li>Test checkout flow and payment processing</li>
+                        <li>Add proper error handling for failed loads</li>
+                    </ol>
+                    <p><strong>Recommended platforms:</strong> Shopify, Dutchie, Square Online, WooCommerce</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alternative Shopping Options -->
+    <section class="alternative-shopping" style="background: #f8f9fa; padding: 60px 0;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px; color: #2c5530;">Other Ways to Shop</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div style="text-align: center; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <i class="fas fa-store" style="font-size: 3rem; color: #4a7c59; margin-bottom: 20px;"></i>
+                    <h3 style="color: #2c5530; margin-bottom: 15px;">Visit Our Dispensary</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Experience our products in person with expert guidance from our knowledgeable staff.</p>
+                    <a href="contact.html" class="btn btn-primary">Get Directions</a>
+                </div>
+                
+                <div style="text-align: center; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <i class="fas fa-phone" style="font-size: 3rem; color: #4a7c59; margin-bottom: 20px;"></i>
+                    <h3 style="color: #2c5530; margin-bottom: 15px;">Call to Order</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Speak directly with our team to place your order over the phone.</p>
+                    <a href="tel:5855550123" class="btn btn-outline">(585) 555-0123</a>
+                </div>
+                
+                <div style="text-align: center; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <i class="fas fa-eye" style="font-size: 3rem; color: #4a7c59; margin-bottom: 20px;"></i>
+                    <h3 style="color: #2c5530; margin-bottom: 15px;">Browse Products</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Explore our full product catalog with detailed descriptions and images.</p>
+                    <a href="products-shop.html" class="btn btn-outline">View Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CannaWave</h3>
+                    <p>Premium Cannabis in Albion, New York</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="products-shop.html">Browse</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>4015 Oak Orchard Road<br>Albion, NY 14411</p>
+                    <p>(585) 555-0123</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="disclaimers">
+                    <p><strong>21+ Only:</strong> You must be 21 years or older to purchase cannabis products.</p>
+                    <p><strong>Keep out of reach of children and pets.</strong></p>
+                    <p>This product is not approved by the FDA for the diagnosis, cure, mitigation, treatment, or prevention of any disease.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="shop-embed.js"></script>
+</body>
+</html>
