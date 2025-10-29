@@ -93,10 +93,10 @@ window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     
     if (window.scrollY > 100) {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
-        header.style.backdropFilter = 'blur(10px)';
+        header.style.background = 'rgba(27, 31, 36, 0.95)';
+        header.style.backdropFilter = 'blur(8px)';
     } else {
-        header.style.background = 'white';
+        header.style.background = '#1b1f24';
         header.style.backdropFilter = 'none';
     }
 });
