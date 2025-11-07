@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f8f9fa; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .flower-card { 
+            background: white; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        .flower-image { 
+            height: 300px; 
+            background: linear-gradient(135deg, #4a7c59, #2c5530);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .flower-content { padding: 20px; text-align: center; }
+        .flower-content h3 { color: #2c5530; margin-bottom: 10px; }
+        .btn { 
+            background: #4a7c59; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; color: #2c5530;">🌿 Cannabis Flower Test</h1>
+        
+        <div class="flower-card">
+            <div class="flower-image">
+                🌿 Premium Cannabis Flower
+            </div>
+            <div class="flower-content">
+                <h3>Flower</h3>
+                <p>Top-shelf flower with vibrant colors and premium quality</p>
+                <button class="btn">Shop Flower</button>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <p>This shows how the flower section should look with a beautiful cannabis image!</p>
+        </div>
+    </div>
+    
+    <script>
+        // Add functionality to the Shop Flower button
+        document.addEventListener('DOMContentLoaded', function() {
+            const shopFlowerBtn = document.querySelector('.btn');
+            if (shopFlowerBtn) {
+                shopFlowerBtn.addEventListener('click', function() {
+                    // Navigate to products page with flower category
+                    window.location.href = 'products.html?category=flower';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+

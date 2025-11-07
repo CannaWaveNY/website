@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Update Helper</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .section { margin: 30px 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .section h3 { color: #2c5530; margin-bottom: 15px; }
+        .image-preview { width: 200px; height: 150px; object-fit: cover; border-radius: 8px; margin: 10px; }
+        .current-url { background: #f0f0f0; padding: 10px; border-radius: 5px; font-family: monospace; font-size: 12px; word-break: break-all; margin: 10px 0; }
+        .new-url { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; margin: 5px 0; }
+        .update-btn { background: #4a7c59; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 10px 5px; }
+        .update-btn:hover { background: #2c5530; }
+        .instructions { background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Image Update Helper</h1>
+        <p>Use this tool to easily update your website images with AI-generated content.</p>
+        
+        <div class="instructions">
+            <h3>📋 Instructions:</h3>
+            <ol>
+                <li>Generate AI images using the prompts in <code>AI_IMAGE_GUIDE.md</code></li>
+                <li>Save images to the <code>images/products/</code> folder</li>
+                <li>Update the URLs below with your new image paths</li>
+                <li>Copy the generated code and replace it in your HTML files</li>
+            </ol>
+        </div>
+
+        <!-- Products Page Images -->
+        <div class="section">
+            <h3>Products Page - Category Images</h3>
+            
+            <div>
+                <h4>Flowers (Already using your custom image)</h4>
+                <img src="images/ChatGPT Image Oct 28, 2025, 04_49_02 PM.png" alt="Flowers" class="image-preview">
+                <div class="current-url">Current: images/ChatGPT Image Oct 28, 2025, 04_49_02 PM.png</div>
+                <input type="text" class="new-url" placeholder="New image path (e.g., images/products/flowers/flower-hero.jpg)" id="flower-hero">
+            </div>
+
+            <div>
+                <h4>Concentrates</h4>
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=150&fit=crop" alt="Concentrates" class="image-preview">
+                <div class="current-url">Current: https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=400&fit=crop</div>
+                <input type="text" class="new-url" placeholder="New image path (e.g., images/products/concentrates/concentrate-hero.jpg)" id="concentrate-hero">
+            </div>
+
+            <div>
+                <h4>Edibles</h4>
+                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&h=150&fit=crop" alt="Edibles" class="image-preview">
+                <div class="current-url">Current: https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=400&fit=crop</div>
+                <input type="text" class="new-url" placeholder="New image path (e.g., images/products/edibles/edible-hero.jpg)" id="edible-hero">
+            </div>
+
+            <div>
+                <h4>Vapes & Carts</h4>
+                <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=200&h=150&fit=crop" alt="Vapes" class="image-preview">
+                <div class="current-url">Current: https://images.unsplash.com/photo-1609220136736-443140cffec6?w=500&h=400&fit=crop</div>
+                <input type="text" class="new-url" placeholder="New image path (e.g., images/products/vapes/vape-hero.jpg)" id="vape-hero">
+            </div>
+
+            <div>
+                <h4>Pre-rolls</h4>
+                <img src="images/canabis-marijuana-bumps-8054145_1280.jpg" alt="Pre-rolls" class="image-preview">
+                <div class="current-url">Current: images/canabis-marijuana-bumps-8054145_1280.jpg</div>
+                <input type="text" class="new-url" placeholder="New image path (e.g., images/products/prerolls/preroll-hero.jpg)" id="preroll-hero" value="images/canabis-marijuana-bumps-8054145_1280.jpg">
+            </div>
+
+            <div>
+                <h4>Drinks</h4>
+                <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=200&h=150&fit=crop" alt="Drinks" class="image-preview">
+                <div class="current-url">Current: https://images.unsplash.com/photo-1544148103-0773bf10d330?w=500&h=400&fit=crop</div>
+                <input type="text" class="new-url" placeholder="New image path (e.g., images/products/drinks/drink-hero.jpg)" id="drink-hero">
+            </div>
+
+            <button class="update-btn" onclick="generateProductsCode()">Generate Products Page Code</button>
+        </div>
+
+        <!-- Generated Code Display -->
+        <div class="section">
+            <h3>Generated Code</h3>
+            <textarea id="generatedCode" rows="20" cols="80" style="width: 100%; font-family: monospace; font-size: 12px;" placeholder="Generated code will appear here..."></textarea>
+            <button class="update-btn" onclick="copyCode()">Copy Code</button>
+        </div>
+    </div>
+
+    <script>
+        function generateProductsCode() {
+            const flowerHero = document.getElementById('flower-hero').value || 'images/ChatGPT Image Oct 28, 2025, 04_49_02 PM.png';
+            const concentrateHero = document.getElementById('concentrate-hero').value || 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=400&fit=crop';
+            const edibleHero = document.getElementById('edible-hero').value || 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=400&fit=crop';
+            const vapeHero = document.getElementById('vape-hero').value || 'https://images.unsplash.com/photo-1609220136736-443140cffec6?w=500&h=400&fit=crop';
+            const prerollHero = document.getElementById('preroll-hero').value || 'images/canabis-marijuana-bumps-8054145_1280.jpg';
+            const drinkHero = document.getElementById('drink-hero').value || 'https://images.unsplash.com/photo-1544148103-0773bf10d330?w=500&h=400&fit=crop';
+
+            const code = `<!-- Update these image sources in products.html -->
+
+<!-- Flowers Section -->
+<img src="${flowerHero}" alt="Premium Cannabis Flowers">
+
+<!-- Concentrates Section -->
+<img src="${concentrateHero}" alt="Cannabis Concentrates">
+
+<!-- Edibles Section -->
+<img src="${edibleHero}" alt="Cannabis Edibles">
+
+<!-- Vapes & Carts Section -->
+<img src="${vapeHero}" alt="Vape Cartridges">
+
+<!-- Pre-rolls Section -->
+<img src="${prerollHero}" alt="Pre-rolled Cannabis">
+
+<!-- Drinks Section -->
+<img src="${drinkHero}" alt="Cannabis Beverages">`;
+
+            document.getElementById('generatedCode').value = code;
+        }
+
+        function copyCode() {
+            const code = document.getElementById('generatedCode');
+            code.select();
+            document.execCommand('copy');
+            alert('Code copied to clipboard!');
+        }
+
+        // Auto-generate code when inputs change
+        document.querySelectorAll('.new-url').forEach(input => {
+            input.addEventListener('input', generateProductsCode);
+        });
+    </script>
+</body>
+</html>

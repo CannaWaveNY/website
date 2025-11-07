@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | CannaWave | Cannabis Dispensary in Albion, New York</title>
+    <meta name="description" content="Discover our premium cannabis product categories including flowers, concentrates, edibles, vapes, and more at CannaWave in Albion.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/cannawave-logo.png">
+    <style>
+        .product-category-section {
+            padding: 80px 0;
+            background: #121212;
+        }
+        
+        .product-category-section:nth-child(even) {
+            background: #0f1111;
+        }
+        
+        .product-category-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .product-category-content.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .product-category-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .product-category-image img {
+            max-width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        }
+        
+        .product-category-text {
+            flex: 1;
+        }
+        
+        .product-category-text h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4a7c59;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .product-category-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #9aa3a7;
+            margin-bottom: 30px;
+        }
+        
+        .shop-button {
+            background: linear-gradient(135deg, #4a7c59, #2c5530);
+            color: #f3f4f6;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .shop-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(17, 24, 39, 0.45);
+        }
+        
+        .products-hero {
+            background: linear-gradient(135deg, #4a7c59, #2c5530);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .products-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .products-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .product-category-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .product-category-content.reverse {
+                flex-direction: column;
+            }
+            
+            .product-category-text h2 {
+                font-size: 2.5rem;
+            }
+            
+            .products-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <div class="logo-container">
+                        <img src="images/cannawave-logo.png" alt="CannaWave Logo" class="logo-image">
+                        <div class="logo-text">
+                            <h1><a href="index.html" style="text-decoration: none; color: inherit;">CannaWave</a></h1>
+                            <p class="tagline">Premium Cannabis in Albion, New York</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="shop.html" class="nav-link">Shop</a>
+                    <a href="products.html" class="nav-link active">Products</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="faqs.html" class="nav-link">FAQs</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-toggle" id="navToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Products Hero Section -->
+    <section class="products-hero">
+        <div class="container">
+            <h1>Our Premium Products</h1>
+            <p>Discover our carefully curated selection of premium cannabis products, each crafted with the highest standards of quality and purity.</p>
+        </div>
+    </section>
+
+    <!-- Flowers Section -->
+    <section class="product-category-section">
+        <div class="product-category-content">
+            <div class="product-category-image">
+                <img src="images/bud.png" alt="Premium Cannabis Flowers">
+            </div>
+            <div class="product-category-text">
+                <h2>FLOWERS</h2>
+                <p>Experience our premium selection of hand-picked cannabis flowers, cultivated with meticulous care and attention to detail. Our flowers boast exceptional potency, rich terpene profiles, and a diverse range of strains including indica, sativa, and hybrid varieties. Each bud is carefully grown, harvested, and cured to perfection, ensuring maximum flavor, aroma, and therapeutic benefits. Our flowers undergo rigorous testing for potency, purity, and safety, guaranteeing you receive only the highest quality cannabis that delivers an exceptional experience every time.</p>
+                <a href="shop.html?category=flower" class="shop-button">SHOP FLOWERS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concentrates Section -->
+    <section class="product-category-section">
+        <div class="product-category-content reverse">
+            <div class="product-category-image">
+                <img src="images/extract.avif" alt="Cannabis Concentrates">
+            </div>
+            <div class="product-category-text">
+                <h2>CONCENTRATES</h2>
+                <p>Discover our premium collection of cannabis concentrates, expertly refined to deliver maximum potency and purity. Our concentrates include shatter, wax, live resin, and rosin, each offering unique textures and experiences. Crafted through advanced extraction methods, our concentrates preserve the full spectrum of cannabinoids and terpenes, providing intense flavor profiles and powerful effects. Perfect for experienced users seeking concentrated potency, our concentrates are lab-tested for purity and consistency, ensuring a clean and potent experience that elevates your cannabis journey.</p>
+                <a href="shop.html?category=extracts" class="shop-button">SHOP CONCENTRATES</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Edibles Section -->
+    <section class="product-category-section">
+        <div class="product-category-content">
+            <div class="product-category-image">
+                <img src="images/edible.avif" alt="Cannabis Edibles">
+            </div>
+            <div class="product-category-text">
+                <h2>EDIBLES</h2>
+                <p>Indulge in our diverse array of cannabis-infused edibles, offering a discreet and delicious way to enjoy cannabis. From gourmet chocolates and gummies to baked goods and beverages, our edibles come in various flavors, forms, and dosages to suit every preference. Made with high-quality ingredients and precisely dosed cannabis extracts, our edibles provide consistent, long-lasting effects perfect for both beginners and experienced users. Each product is carefully crafted to deliver a smooth, enjoyable experience while maintaining the highest standards of quality and safety.</p>
+                <a href="shop.html?category=edibles" class="shop-button">SHOP EDIBLES</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vapes & Carts Section -->
+    <section class="product-category-section">
+        <div class="product-category-content reverse">
+            <div class="product-category-image">
+                <img src="images/cart.avif" alt="Vape Cartridges">
+            </div>
+            <div class="product-category-text">
+                <h2>VAPES & CARTS</h2>
+                <p>Experience the convenience and discretion of our premium vape cartridges and disposable vapes. Our selection features high-quality cannabis oil extracted from the finest strains, delivering smooth and flavorful vapor with every puff. Available in various strains and flavors, our vape products offer precise dosing and consistent effects. Perfect for on-the-go consumption, our vapes provide a clean, potent experience without the need for additional equipment. Each cartridge is lab-tested for purity and potency, ensuring a safe and enjoyable vaping experience.</p>
+                <a href="shop.html?category=vapes" class="shop-button">SHOP VAPES</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-rolls Section -->
+    <section class="product-category-section">
+        <div class="product-category-content">
+            <div class="product-category-image">
+                <img src="images/preroll.jpg" alt="Pre-rolled Cannabis">
+            </div>
+            <div class="product-category-text">
+                <h2>PREROLLS</h2>
+                <p>Enjoy our premium selection of expertly crafted pre-rolls, featuring high-quality, finely ground cannabis rolled to perfection. Our pre-rolls include both traditional joints and infused varieties with concentrates for enhanced potency and flavor. Each pre-roll is carefully rolled using premium papers and filters, ensuring a smooth and even burn every time. Perfect for convenience and consistency, our pre-rolls deliver the full flavor profile and effects of our premium flower. Whether you prefer indica, sativa, or hybrid strains, our pre-rolls offer a convenient way to enjoy cannabis on the go.</p>
+                <a href="shop.html?category=prerolls" class="shop-button">SHOP PREROLLS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drinks Section -->
+    <section class="product-category-section">
+        <div class="product-category-content reverse">
+            <div class="product-category-image">
+                <img src="images/drink.avif" alt="Cannabis Beverages">
+            </div>
+            <div class="product-category-text">
+                <h2>DRINKS</h2>
+                <p>Quench your thirst with our refreshing selection of cannabis-infused beverages, including sodas, teas, sparkling waters, and energy drinks. Our drinkable cannabis products offer precise dosing and fast-acting effects, making them perfect for social settings or when you want a quick, discreet way to consume cannabis. Available in various flavors and potencies, our beverages are made with high-quality ingredients and lab-tested for consistency and safety. Whether you're looking for a relaxing evening drink or an energizing daytime beverage, our cannabis drinks provide a unique and enjoyable way to experience the benefits of cannabis.</p>
+                <a href="shop.html?category=drinks" class="shop-button">SHOP DRINKS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="contact-cta" style="background: #2c5530; color: white; padding: 80px 0; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Explore Our Products?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">Visit our dispensary or browse our online shop to discover your perfect cannabis products.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="shop.html" class="btn btn-primary" style="background: white; color: #2c5530; padding: 15px 30px; font-size: 1.1rem;">Shop Online</a>
+                <a href="contact.html" class="btn btn-outline" style="border: 2px solid white; color: white; padding: 15px 30px; font-size: 1.1rem;">Visit Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                    <div class="footer-section">
+                        <div class="footer-logo">
+                            <img src="images/cannawave-logo.png" alt="CannaWave Logo" class="footer-logo-image">
+                            <div class="footer-logo-text">
+                                <h3>CannaWave</h3>
+                                <p>Premium Cannabis in Albion, New York</p>
+                            </div>
+                        </div>
+                    </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>172 South Main Street<br>Albion, NY 14411, USA</p>
+                    <p>(585) 555-0123</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="disclaimers">
+                    <p><strong>21+ Only:</strong> You must be 21 years or older to purchase cannabis products.</p>
+                    <p><strong>Keep out of reach of children and pets.</strong></p>
+                    <p>This product is not approved by the FDA for the diagnosis, cure, mitigation, treatment, or prevention of any disease.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

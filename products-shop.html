@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse | CannaWave | Cannabis Dispensary in Albion, New York</title>
+    <meta name="description" content="Browse our premium cannabis products including flower, edibles, vapes, and more at CannaWave in Albion.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html" style="text-decoration: none; color: inherit;">CannaWave</a></h1>
+                    <p class="tagline">Premium Cannabis in Albion, New York</p>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="shop.html" class="nav-link">Shop</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="products-shop.html" class="nav-link active">Browse</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="faqs.html" class="nav-link">FAQs</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-toggle" id="navToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Shop Hero Section -->
+    <section class="products-hero">
+        <div class="container">
+            <h1>Browse Cannabis Products</h1>
+            <p>Explore our carefully curated selection of premium cannabis products</p>
+        </div>
+    </section>
+
+    <!-- Product Categories Filter -->
+    <section class="product-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Products</button>
+                <button class="filter-btn" data-category="flower">Flower</button>
+                <button class="filter-btn" data-category="edibles">Edibles</button>
+                <button class="filter-btn" data-category="vapes">Vapes</button>
+                <button class="filter-btn" data-category="extracts">Extracts</button>
+                <button class="filter-btn" data-category="prerolls">Pre-rolls</button>
+                <button class="filter-btn" data-category="drinks">Drinks</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- Sample Products - Replace with your actual products -->
+                <div class="product-card" data-category="flower">
+                    <div class="product-image">
+                        <img src="images/ChatGPT Image Oct 28, 2025, 04_49_02 PM.png" alt="Premium Cannabis Flower">
+                        <div class="product-badge">Premium</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Blue Dream</h3>
+                        <p class="product-category">Flower</p>
+                        <p class="product-description">Sativa-dominant hybrid with sweet berry aroma</p>
+                        <div class="product-details">
+                            <span class="thc">THC: 18-22%</span>
+                            <span class="price">$45/3.5g</span>
+                        </div>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="flower">
+                    <div class="product-image">
+                        <img src="images/ChatGPT Image Oct 28, 2025, 04_49_02 PM.png" alt="Premium Flower">
+                    </div>
+                    <div class="product-info">
+                        <h3>OG Kush</h3>
+                        <p class="product-category">Flower</p>
+                        <p class="product-description">Classic indica with earthy, pine flavors</p>
+                        <div class="product-details">
+                            <span class="thc">THC: 20-24%</span>
+                            <span class="price">$50/3.5g</span>
+                        </div>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="edibles">
+                    <div class="product-image">
+                        <img src="images/delta-8-thc-6105636_1280.jpg" alt="Edibles">
+                    </div>
+                    <div class="product-info">
+                        <h3>Chocolate Chip Cookies</h3>
+                        <p class="product-category">Edibles</p>
+                        <p class="product-description">Delicious chocolate chip cookies, 10mg THC each</p>
+                        <div class="product-details">
+                            <span class="thc">THC: 10mg/piece</span>
+                            <span class="price">$25/6-pack</span>
+                        </div>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vapes">
+                    <div class="product-image">
+                        <img src="images/istockphoto-1189236740-2048x2048.jpg" alt="Vape Cartridge">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gelato Vape Cart</h3>
+                        <p class="product-category">Vapes</p>
+                        <p class="product-description">Smooth indica-dominant vape cartridge</p>
+                        <div class="product-details">
+                            <span class="thc">THC: 85%</span>
+                            <span class="price">$60/1g</span>
+                        </div>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="extracts">
+                    <div class="product-image">
+                        <img src="images/istockphoto-2217214102-2048x2048.jpg" alt="Extract">
+                    </div>
+                    <div class="product-info">
+                        <h3>Live Resin</h3>
+                        <p class="product-category">Extracts</p>
+                        <p class="product-description">Premium live resin concentrate</p>
+                        <div class="product-details">
+                            <span class="thc">THC: 75-80%</span>
+                            <span class="price">$70/1g</span>
+                        </div>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="prerolls">
+                    <div class="product-image">
+                        <img src="images/canabis-marijuana-bumps-8054145_1280.jpg" alt="Pre-roll">
+                    </div>
+                    <div class="product-info">
+                        <h3>Wedding Cake Pre-roll</h3>
+                        <p class="product-category">Pre-rolls</p>
+                        <p class="product-description">Premium pre-rolled joint, 1g</p>
+                        <div class="product-details">
+                            <span class="thc">THC: 22%</span>
+                            <span class="price">$15/each</span>
+                        </div>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="drinks">
+                    <div class="product-image">
+                        <img src="images/istockphoto-1187713625-2048x2048.jpg" alt="Cannabis Drink">
+                    </div>
+                    <div class="product-info">
+                        <h3>CBD Lemonade</h3>
+                        <p class="product-category">Drinks</p>
+                        <p class="product-description">Refreshing CBD-infused lemonade</p>
+                        <div class="product-details">
+                            <span class="thc">CBD: 25mg</span>
+                            <span class="price">$8/bottle</span>
+                        </div>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="edibles">
+                    <div class="product-image">
+                        <img src="images/delta-8-thc-6105636_1280.jpg" alt="Gummies">
+                    </div>
+                    <div class="product-info">
+                        <h3>Mixed Berry Gummies</h3>
+                        <p class="product-category">Edibles</p>
+                        <p class="product-description">Tasty mixed berry gummies, 5mg THC each</p>
+                        <div class="product-details">
+                            <span class="thc">THC: 5mg/piece</span>
+                            <span class="price">$20/10-pack</span>
+                        </div>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CannaWave</h3>
+                    <p>Premium Cannabis in Albion, New York</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>4015 Oak Orchard Road<br>Albion, NY 14411</p>
+                    <p>(585) 555-0123</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="disclaimers">
+                    <p><strong>21+ Only:</strong> You must be 21 years or older to purchase cannabis products.</p>
+                    <p><strong>Keep out of reach of children and pets.</strong></p>
+                    <p>This product is not approved by the FDA for the diagnosis, cure, mitigation, treatment, or prevention of any disease.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>

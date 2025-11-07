@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Online | CannaWave | Cannabis Dispensary in Albion, New York</title>
+    <meta name="description" content="Shop cannabis products online at CannaWave. Browse our premium selection of flowers, edibles, vapes, and more with convenient online ordering.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/cannawave-logo.png">
+    
+    <!-- Dutchie E-commerce Integration -->
+    <script async id="dutchie--embed__script" src="https://dutchie.com/api/v2/embedded-menu/6903f27c6cb62f7bae97f173.js"></script>
+    <script>
+        // Dutchie configuration
+        window.dutchieConfig = {
+            dispensaryId: '6903f27c6cb62f7bae97f173',
+            theme: 'dark',
+            showHeader: true,
+            showFooter: true
+        };
+    </script>
+    <style>
+        /* Full-Page Shop Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(27, 31, 36, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #dutchie-shop-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+            background: #0f1111;
+            overflow: hidden;
+        }
+
+        #dutchie-shop-embed {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #dutchie-shop-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .dutchie-loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #9aa3a7;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #262626;
+            border-top: 4px solid #4a7c59;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <div class="logo-container">
+                        <img src="images/cannawave-logo.png" alt="CannaWave Logo" class="logo-image">
+                        <div class="logo-text">
+                            <h1><a href="index.html" style="text-decoration: none; color: inherit;">CannaWave</a></h1>
+                            <p class="tagline">Premium Cannabis in Albion, New York</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="shop.html" class="nav-link active">Shop</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="faqs.html" class="nav-link">FAQs</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-toggle" id="navToggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dutchie Full-Page Embed -->
+    <div id="dutchie-shop-container">
+        <div id="dutchie-shop-embed">
+            <div class="dutchie-loading">
+                <div class="loading-spinner"></div>
+                <p>Loading our menu...</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Dutchie Shop Page Integration -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dutchieShopEmbed = document.getElementById('dutchie-shop-embed');
+            const dutchieUrl = '6903f27c6cb62f7bae97f173';
+            const loadingDiv = document.querySelector('.dutchie-loading');
+            const shopHeader = document.querySelector('.header');
+            const dutchieContainer = document.getElementById('dutchie-shop-container');
+
+            function updateDutchiePosition() {
+                if (shopHeader && dutchieContainer) {
+                    const headerHeight = shopHeader.offsetHeight;
+                    dutchieContainer.style.top = headerHeight + 'px';
+                    dutchieContainer.style.height = `calc(100vh - ${headerHeight}px)`;
+                }
+            }
+
+            // Update position on load and resize
+            updateDutchiePosition();
+            window.addEventListener('resize', updateDutchiePosition);
+            setTimeout(updateDutchiePosition, 100);
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category');
+
+            function createDutchieIframe(categoryParam = null) {
+                const existingIframe = document.getElementById('dutchie-iframe');
+                if (existingIframe) {
+                    return;
+                }
+
+                let iframeUrl = `https://dutchie.com/dispensary/${dutchieUrl}`;
+                if (categoryParam) {
+                    iframeUrl += `?category=${categoryParam}`;
+                }
+
+                const iframe = document.createElement('iframe');
+                iframe.id = 'dutchie-iframe';
+                iframe.src = iframeUrl;
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.border = 'none';
+                iframe.style.display = 'block';
+                iframe.title = 'CannaWave Online Menu';
+                iframe.allow = 'payment; fullscreen';
+                iframe.setAttribute('allowfullscreen', 'true');
+
+                iframe.onload = function() {
+                    console.log('Dutchie iframe loaded successfully');
+                    if (loadingDiv) {
+                        loadingDiv.style.display = 'none';
+                    }
+                };
+
+                iframe.onerror = function() {
+                    console.error('Dutchie iframe failed to load');
+                    if (loadingDiv) {
+                        loadingDiv.innerHTML = `
+                            <div style="text-align: center; color: #9aa3a7; padding: 40px;">
+                                <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #4a7c59; margin-bottom: 20px;"></i>
+                                <h3 style="color: #4a7c59; margin-bottom: 15px;">Unable to Load Menu</h3>
+                                <p style="margin-bottom: 20px;">Please try again or call us at (585) 555-0123</p>
+                                <a href="index.html" class="btn btn-primary">Return to Home</a>
+                            </div>
+                        `;
+                    }
+                };
+
+                if (loadingDiv) {
+                    loadingDiv.style.display = 'none';
+                }
+                dutchieShopEmbed.innerHTML = '';
+                dutchieShopEmbed.appendChild(iframe);
+            }
+
+            setTimeout(function() {
+                updateDutchiePosition();
+                createDutchieIframe(category);
+            }, 600);
+
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

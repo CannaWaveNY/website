@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CannaWave | Cannabis Dispensary in Albion, New York</title>
+    <meta name="description" content="Visit CannaWave in Albion, NY. Premium cannabis products, friendly service, locally-owned and operated.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/cannawave-logo.png">
+    
+    <!-- Dutchie E-commerce Integration -->
+    <script async id="dutchie--embed__script" src="https://dutchie.com/api/v2/embedded-menu/6903f27c6cb62f7bae97f173.js"></script>
+    <script>
+        // Dutchie configuration
+        window.dutchieConfig = {
+            dispensaryId: '6903f27c6cb62f7bae97f173',
+            theme: 'dark',
+            showHeader: true,
+            showFooter: true
+        };
+    </script>
+</head>
+<body>
+    <!-- Age Gate Modal -->
+    <div id="ageGate" class="age-gate-overlay">
+        <div class="age-gate-modal">
+            <div class="age-gate-content">
+                <h1>Welcome to CannaWave</h1>
+                <p class="age-question">Are you 21 years of age or older?</p>
+                <div class="age-buttons">
+                    <button id="yesBtn" class="btn btn-primary">Yes, I am 21+</button>
+                    <button id="noBtn" class="btn btn-secondary">No, I am under 21</button>
+                </div>
+                <p class="age-disclaimer">You must be 21 or older to enter this site</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Website Content -->
+    <div id="mainContent" class="main-content" style="display: none;">
+        <!-- Header -->
+        <header class="header">
+            <nav class="navbar">
+                <div class="nav-container">
+                    <div class="nav-logo">
+                        <div class="logo-container">
+                            <img src="images/cannawave-logo.png" alt="CannaWave Logo" class="logo-image">
+                            <div class="logo-text">
+                                <h1>CannaWave</h1>
+                                <p class="tagline">Premium Cannabis in Albion, New York</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-menu" id="navMenu">
+                        <a href="#home" class="nav-link">Home</a>
+                        <a href="shop.html" class="nav-link">Shop</a>
+                        <a href="products.html" class="nav-link">Products</a>
+                        <a href="#about" class="nav-link">About</a>
+                        <a href="faqs.html" class="nav-link">FAQs</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </div>
+                    <div class="nav-toggle" id="navToggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <img src="images/cannawave-logo.png" alt="CannaWave Logo" class="hero-logo">
+                    <h1 class="hero-title">CannaWave – Cannabis in Albion, New York – Now Open</h1>
+                    <p class="hero-subtitle">Your premier destination for cannabis products, quality & service.</p>
+                    <button class="btn btn-primary btn-large">Shop Now</button>
+                </div>
+                <div class="hero-image">
+                    <img src="images/exterior.png" alt="CannaWave Dispensary Exterior">
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop by Category Section -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Shop By Category</h2>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="images/bud.png" alt="Premium Cannabis Flower">
+                        </div>
+                        <div class="category-content">
+                            <h3>Flower</h3>
+                            <p>Top-shelf flower</p>
+                            <button class="btn btn-outline">Shop Flower</button>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="images/preroll.jpg" alt="Pre-rolls">
+                        </div>
+                        <div class="category-content">
+                            <h3>Pre-rolls</h3>
+                            <p>Ready to smoke</p>
+                            <button class="btn btn-outline">Shop Pre-rolls</button>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="images/extract.avif" alt="Extracts">
+                        </div>
+                        <div class="category-content">
+                            <h3>Extracts</h3>
+                            <p>Concentrates & oils</p>
+                            <button class="btn btn-outline">Shop Extracts</button>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="images/cart.avif" alt="Vapes">
+                        </div>
+                        <div class="category-content">
+                            <h3>Vapes</h3>
+                            <p>Disposable & cartridges</p>
+                            <button class="btn btn-outline">Shop Vapes</button>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="images/edible.avif" alt="Edibles">
+                        </div>
+                        <div class="category-content">
+                            <h3>Edibles</h3>
+                            <p>Chocolates, candy & more</p>
+                            <button class="btn btn-outline">Shop Edibles</button>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="images/drink.avif" alt="Drinks">
+                        </div>
+                        <div class="category-content">
+                            <h3>Drinks</h3>
+                            <p>Beverages & tonics</p>
+                            <button class="btn btn-outline">Shop Drinks</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About CannaWave</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="address">172 South Main Street<br>Albion, NY 14411, USA</p>
+                        <p>CannaWave is a locally-owned and operated cannabis dispensary committed to providing our community with the highest quality products and exceptional service. As a family-owned business, we understand the importance of building relationships with our customers and supporting our local community.</p>
+                        <p>Our mission is to offer a safe, welcoming environment where adults can explore and purchase premium cannabis products while receiving expert guidance from our knowledgeable staff. We believe in the power of cannabis to enhance wellness and are proud to be part of New York's thriving cannabis industry.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/interior.png" alt="CannaWave Dispensary Interior">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <div class="container">
+                <h2 class="section-title">Visit Us</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Address</h3>
+                                <p>172 South Main Street<br>Albion, NY 14411, USA</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Phone</h3>
+                                <p>(303) 555-0123</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" id="getDirectionsBtn" data-address="172 South Main Street, Albion, NY 14411, USA">Get Directions</button>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Hours</h3>
+                                <p>Monday - Sunday<br>9:00 AM - 10:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <h2 class="section-title">Stay up to date on our deals</h2>
+                <div class="newsletter-content">
+                    <p>Subscribe to our newsletter for exclusive deals, new product announcements, and special events.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <div class="footer-logo">
+                            <img src="images/cannawave-logo.png" alt="CannaWave Logo" class="footer-logo-image">
+                            <div class="footer-logo-text">
+                                <h3>CannaWave</h3>
+                                <p>Premium Cannabis in Albion, New York</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="shop.html">Shop</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact Info</h4>
+                        <p>172 South Main Street<br>Albion, NY 14411, USA</p>
+                        <p>(585) 555-0123</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="disclaimers">
+                        <p><strong>21+ Only:</strong> You must be 21 years or older to purchase cannabis products.</p>
+                        <p><strong>Keep out of reach of children and pets.</strong></p>
+                        <p>This product is not approved by the FDA for the diagnosis, cure, mitigation, treatment, or prevention of any disease.</p>
+                    </div>
+                    <div class="footer-links">
+                        <a href="contact.html">Contact Us</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+</html>
